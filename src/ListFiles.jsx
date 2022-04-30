@@ -54,12 +54,8 @@ const ListFiles = ({ updateList }) => {
   }
 
   if (files.length === 0) {
-    return (
-      <p className="no-file">
-        So empty here, please upload.
-      </p>
-    );
-  };
+    return <p className="no-file">So empty here, please upload.</p>;
+  }
 
   return (
     <div className="file-list">
@@ -81,33 +77,36 @@ const ListFiles = ({ updateList }) => {
       </Modal>
       <h1>Gallery</h1>
       <ul className="uc-list-images">
-        { files.map((file) => (
-            <li key={file.uuid} className="item">
-              <div className="header">
-                <span className="name">{file.original_filename}</span>
-                <div className="actions">
-                  <span className="icon" onClick={(image) => editFile(file)}>
-                    <FiEdit />
-                  </span>
-                  <span
-                    className="icon"
-                    onClick={(id) => deleteFile(file.uuid)}
-                  >
-                    <FiTrash2 />
-                  </span>
-                </div>
-              </div>
-              <div className="file">
-                <img
-                  src={file.original_file_url}
-                  alt={file.original_filename}
-                />
-              </div>
-            </li>
-          ))
-        }
+        {files.map((file) => (
+          <ImageCard 
+            key={file.uuid} 
+            file={file} 
+            deleteFile={deleteFile}
+            editFile={editFile} />
+        ))}
       </ul>
     </div>
+  );
+};
+
+const ImageCard = ({ file, deleteFile, editFile }) => {
+  return (
+    <li className="item">
+      <div className="header">
+        <span className="name">{file.original_filename}</span>
+        <div className="actions">
+          <span className="icon" onClick={(image) => editFile(file)}>
+            <FiEdit />
+          </span>
+          <span className="icon" onClick={(id) => deleteFile(file.uuid)}>
+            <FiTrash2 />
+          </span>
+        </div>
+      </div>
+      <div className="file">
+        <img src={file.original_file_url} alt={file.original_filename} />
+      </div>
+    </li>
   );
 };
 
