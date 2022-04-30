@@ -1,8 +1,24 @@
+
+.ucare {
+  margin: 1rem;
+}
+
+.ucare .upload {
+  background-color: #ececec;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.no-file {
+  text-align: center;
+  font-size: 3rem;
+}
+
 .uc-list-images {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 10px;
-  margin-bottom: 20px;
+  padding: 1rem;
 }
 
 .uc-list-images > li.item {
@@ -15,8 +31,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  border-bottom: 1px solid #e5e5e5;
-  background-color: #e5e5e5;
+  border-bottom: 1px solid #cfcfcf;
+  background-color: #cfcfcf;
 }
 
 .uc-list-images > li.item .header .name {
@@ -38,7 +54,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-  background-color: #ffffff;
+  background-color: #ececec;
 }
 
 .uc-list-images > li.item .file > img {
@@ -51,6 +67,10 @@
   overflow: auto;
   height: 400px;
   max-width: 1024px;
+}
+
+.uc-ip-preview img {
+  width: 100%;
 }
 
 .uc-ip-actions-grp {
@@ -73,67 +93,14 @@
   color: #ffffff;
 }
 
-.modal-uc-ip {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  border-radius: 0.2rem;
-  transform: translate(-50%, -50%);
-  background: white;
-  box-shadow: 0px 0 26px 0px rgba(var(--color-neutral-90-rgb),0.62);
-  -webkit-box-shadow: 0px 0 26px 0px rgba(var(--color-neutral-90-rgb),0.62);
-  -moz-box-shadow: 0px 0 26px 0px rgba(var(--color-neutral-90-rgb),0.62);
+.modal-body {
+  padding: 0;
 }
 
-.modal-uc-ip .modal-uc-ip-header {
-  padding: 1rem 1.6rem 1.6rem 1.4rem;
-}
-.modal-uc-ip .modal-uc-ip-header .modal-title {
-  margin: 0;
-  font-size: var(--fs-md);
-}
-
-.modal-uc-ip .modal-uc-ip-body {
-  padding: 0 1.6rem 1rem 1.6rem;
-  flex-grow: 1;
+@media (min-width: 576px) {
+  .modal-dialog {
+      max-width: 800px;
+      margin: 1.75rem auto;
+  }
 }
 
-.modal-uc-ip .modal-uc-ip-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  grid-gap: 0.6rem;
-  padding: 1rem 1.6rem 1.4rem 1.6rem;
-}
-
-.modal-uc-ip .form-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-bottom: 1rem;
-}
-
-
-.modal-uc-ip .form-group:last-child {
-  margin-bottom: 0;
-
-}
-
-.modal-uc-ip .form-group label {
-  color: var(--color-neutral-70);
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-bold);
-}
-
-.modal-uc-ip .form-group .form-control {
-  font-size: var(--fs-rg);
-  padding: 0.4rem 0.2rem;
-}
-
-.modal-uc-ip .form-group .form-control option {
-  padding: 1.6rem;
-  font-size: var(--fs-rg);
-}

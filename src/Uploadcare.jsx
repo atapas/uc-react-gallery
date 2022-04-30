@@ -1,22 +1,25 @@
+import { useState } from 'react';
 import { Widget } from "@uploadcare/react-widget";
+import ListFiles from "./ListFiles";
 
 function Uploadcare() {
-  console.log(process.env.REACT_APP_UPLOADCARE_API_PUBLIC_KEY);
+  const [updateList, setUpdateList] = useState(false);
   const uploadFileChange = (info) => {
     console.log(info);
   };
 
   const uploadFileSelect = (file) => {
     console.log(`file changed ${file}`);
+    setUpdateList(false);
     if (file) {
       file.progress((info) => console.log("File progress: ", info.progress));
-      file.done((info) => console.log(info));
+      file.done((info) => setUpdateList(true));
     }
   };
 
   return (
-    <div className="ucare-widget">
-      <div>
+    <div className="ucare">
+      <div className="upload">
         <label htmlFor="file">Please upload an image</label>{" "}
         <Widget
           publicKey={process.env.REACT_APP_UPLOADCARE_API_PUBLIC_KEY}
@@ -26,6 +29,7 @@ function Uploadcare() {
           onFileSelect={(file) => uploadFileSelect(file)}
         />
       </div>
+      <ListFiles updateList={ updateList }/>
     </div>
   );
 }
