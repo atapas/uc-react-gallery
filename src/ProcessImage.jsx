@@ -40,14 +40,14 @@ const ProcessImage = ({file}) => {
           <button onClick={() => setImageSrc(`${CDN_URI}-/rotate/180/`)}>Rotate 180 degree</button>
           <button onClick={() => setImageSrc(`${CDN_URI}-/flip/`)}>Flip It</button>
           <button onClick={() => setImageSrc(`${CDN_URI}-/mirror/`)}>Mirror It</button>
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/`)}>Set Original</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}`)}>Set Original</button>
         </div>
         <div className="uc-ip-actions">
           Blur & Sharpen
           <button onClick={() => setImageSrc(`${CDN_URI}-/blur_region/faces/`)}>Blur Face</button>
           <button onClick={() => setImageSrc(`${CDN_URI}-/sharp/10/`)}>Sharp 10</button>
           <button onClick={() => setImageSrc(`${CDN_URI}-/sharp/20/`)}>Sharp 20</button>
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/`)}>Set Original</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}`)}>Set Original</button>
         </div>
         <div className="uc-ip-actions">
           Defect Face
