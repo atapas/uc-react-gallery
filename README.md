@@ -13,7 +13,7 @@ Who doesn't want motivation and support? Many Thanks to all the Stargazers who h
 
 [![Stargazers repo roster for @atapas/uc-react-gallery](https://reporoster.com/stars/atapas/uc-react-gallery)](https://github.com/atapas/uc-react-gallery/stargazers)
 
-Please support the work by giving the repository a ⭐, contributing to it, and/or sponsoring using the `Sponsor` button at the top 😍. You can also follow us on twitter [@reactplayio](https://twitter.com/reactplayio).
+Please support the work by giving the repository a ⭐, contributing to it, and/or sponsoring using the `Sponsor` button at the top 😍.
 
 ## How to Run the Project locally?
 
