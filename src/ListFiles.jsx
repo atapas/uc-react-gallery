@@ -46,7 +46,7 @@ const ListFiles = ({ updateList }) => {
   const editFile = (file) => {
     console.log(file);
     setFileToProcess(file);
-    setShow(true);
+    handleShow();
   };
 
   if (loading) {

@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import FaceMask from './FaceMask';
 
 const ProcessImage = ({file}) => {
   console.log(file);
-  const CDN_URI = `https://ucarecdn.com/${file.uuid}/`;
+  const CDN_URI = `https://ucarecdn.com/${file.uuid}/-/preview/-/quality/smart/`;
   const [imageSrc, setImageSrc] = useState(CDN_URI);
+  const [showMask, setShowMask] = useState(false);
 
   return(
     <div>
       <div className="uc-ip-preview">
+        {showMask && <FaceMask uuid={file.uuid}/>}
         <img src={imageSrc} alt={file.original_filename} />
       </div>
       <div className="uc-ip-actions-grp">
@@ -21,27 +24,32 @@ const ProcessImage = ({file}) => {
         </div>
         <div className="uc-ip-actions">
           Filter
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/filter/lavra/`)}>Lavra</button>
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/filter/pamaya/`)}>Pamaya</button>
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/filter/sewen/`)}>Sewen</button>
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/filter/vevera/`)}>Vevera</button>
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/filter/namala/`)}>Namala</button>
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/`)}>Set Original</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/filter/lavra/`)}>Lavra</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/filter/pamaya/`)}>Pamaya</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/filter/sewen/`)}>Sewen</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/filter/vevera/`)}>Vevera</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/filter/namala/`)}>Namala</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}`)}>Set Original</button>
         </div>
         <div className="uc-ip-actions">
           Rotate & Flip
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/rotate/90/`)}>Rotate 90 degree</button>
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/rotate/180/`)}>Rotate 180 degree</button>
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/flip/`)}>Flip It</button>
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/mirror/`)}>Mirror It</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/rotate/90/`)}>Rotate 90 degree</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/rotate/180/`)}>Rotate 180 degree</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/flip/`)}>Flip It</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/mirror/`)}>Mirror It</button>
           <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/`)}>Set Original</button>
         </div>
         <div className="uc-ip-actions">
           Blur & Sharpen
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/blur_region/faces/`)}>Blur Face</button>
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/sharp/10/`)}>Sharp 10</button>
-          <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/-/sharp/20/`)}>Sharp 20</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/blur_region/faces/`)}>Blur Face</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/sharp/10/`)}>Sharp 10</button>
+          <button onClick={() => setImageSrc(`${CDN_URI}-/sharp/20/`)}>Sharp 20</button>
           <button onClick={() => setImageSrc(`${CDN_URI}-/preview/800x800/`)}>Set Original</button>
+        </div>
+        <div className="uc-ip-actions">
+          Defect Face
+          <button onClick={() => setShowMask(true)}>Detect Face</button>
+          <button onClick={() => setShowMask(false)}>Set Original</button>
         </div>
       </div>
     </div>  

@@ -65,12 +65,6 @@
 
 .uc-ip-preview {
   overflow: auto;
-  height: 400px;
-  max-width: 1024px;
-}
-
-.uc-ip-preview img {
-  width: 100%;
 }
 
 .uc-ip-actions-grp {
@@ -97,9 +91,15 @@
   padding: 0;
 }
 
+.dot-mask {
+  position: absolute;
+  background-color: #00800096;
+  border-radius: 5px;
+}
+
 @media (min-width: 576px) {
   .modal-dialog {
-      max-width: 800px;
+      max-width: 1300px;
       margin: 1.75rem auto;
   }
 }
