@@ -9,6 +9,12 @@ A project to build interactive photo gallery using ReactJS and Uploadcare APIs. 
 - [Uploadcare Doc](https://uploadcare.com/docs/)
 - [Learn Raect Practically](https://www.youtube.com/watch?v=ODKIxaSMgpU&list=PLIJrr73KDmRyrDnDFy-hHvQ24rRjz6e_J)
 
+Who doesn't want motivation and support? Many Thanks to all the Stargazers who has supported this project with stars(⭐). You all are amazing!!!
+
+[![Stargazers repo roster for @atapas/uc-react-gallery](https://reporoster.com/stars/atapas/uc-react-gallery)](https://github.com/atapas/uc-react-gallery/stargazers)
+
+Please support the work by giving the repository a ⭐, contributing to it, and/or sponsoring using the `Sponsor` button at the top 😍. You can also follow us on twitter [@reactplayio](https://twitter.com/reactplayio).
+
 ## How to Run the Project locally?
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
